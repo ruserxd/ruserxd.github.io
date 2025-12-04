@@ -8,17 +8,41 @@
     <author>
       <name>ruserxd</name>
     </author>
-    <updated>2025-12-01T16:00:00.000Z</updated>
+    <updated>2025-12-03T22:44:24.000Z</updated>
     <category term="解題" />
     <category term=" 軟體工程" />
     <category term=" 軟體測試" />
     <category term=" 資訊工程" />
     <category term=" 資訊安全" />
     <entry>
+        <id>https://ruserxd.github.io/2025/12/04/walineAndSupabase/</id>
+        <title>Waline 留言版(Supabase 資料庫)</title>
+        <link rel="alternate" href="https://ruserxd.github.io/2025/12/04/walineAndSupabase/"/>
+        <content type="html">&lt;h2 id=&#34;製作動機&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#製作動機&#34;&gt;#&lt;/a&gt; 製作動機&lt;/h2&gt;
+&lt;p&gt;原先是看 &lt;a href=&#34;https://8loser.github.io/2024/06/16/shokaX-waline-comment/&#34;&gt;8樓部落格&lt;/a&gt;學習製作留言板，但發現 Vercel 在建立 storage 的選項上已沒有 postgress，&lt;a href=&#34;https://vercel.com/changelog/neon-now-available-on-vercel-marketplace&#34;&gt;原因&lt;/a&gt;，&lt;br /&gt;
+因此決定使用 Supabase 建立&lt;/p&gt;
+&lt;h2 id=&#34;vercel-服務端部署&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vercel-服務端部署&#34;&gt;#&lt;/a&gt; Vercel 服務端部署&lt;/h2&gt;
+&lt;p&gt;主要按照&lt;a href=&#34;https://waline.js.org/guide/deploy/vercel.html&#34;&gt;Waline文檔&lt;/a&gt;的步驟做&lt;br /&gt;
+按下 deploy -&amp;gt; 登入 github 帳號&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/after_github.png=300x300&#34; alt=&#34;登入github後&#34; /&gt;&lt;br /&gt;
+創立一個 waline repository 在自己的帳號下&lt;br /&gt;
+我取名為 waline-test，按下 create，等待部署&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/after_deploy.png=300x300&#34; alt=&#34;部署完&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;創立-storage&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#創立-storage&#34;&gt;#&lt;/a&gt; 創立 Storage&lt;/h2&gt;
+&lt;h2 id=&#34;supabase-設定&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#supabase-設定&#34;&gt;#&lt;/a&gt; Supabase 設定&lt;/h2&gt;
+&lt;p&gt;上述步驟完成後，會在自己的 Supabase 下看到製作好的 project&lt;/p&gt;
+</content>
+        <category term="Waline" scheme="https://ruserxd.github.io/tags/Waline/" />
+        <category term="Hexo" scheme="https://ruserxd.github.io/tags/Hexo/" />
+        <category term="Supabase" scheme="https://ruserxd.github.io/tags/Supabase/" />
+        <updated>2025-12-03T22:44:24.000Z</updated>
+    </entry>
+    <entry>
         <id>https://ruserxd.github.io/2025/12/02/recommendation/</id>
         <title>推甄心得文</title>
         <link rel="alternate" href="https://ruserxd.github.io/2025/12/02/recommendation/"/>
-        <content type="html"></content>
+        <content type="html">&lt;p&gt;原先為測試，日後補上&lt;/p&gt;
+</content>
         <category term="推甄" scheme="https://ruserxd.github.io/tags/%E6%8E%A8%E7%94%84/" />
         <updated>2025-12-01T16:00:00.000Z</updated>
     </entry>
