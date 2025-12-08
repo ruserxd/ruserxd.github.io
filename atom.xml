@@ -18,20 +18,56 @@
         <id>https://ruserxd.github.io/2025/12/04/walineAndSupabase/</id>
         <title>Waline 留言版(Supabase 資料庫)</title>
         <link rel="alternate" href="https://ruserxd.github.io/2025/12/04/walineAndSupabase/"/>
-        <content type="html">&lt;h2 id=&#34;製作動機&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#製作動機&#34;&gt;#&lt;/a&gt; 製作動機&lt;/h2&gt;
-&lt;p&gt;原先是看 &lt;a href=&#34;https://8loser.github.io/2024/06/16/shokaX-waline-comment/&#34;&gt;8樓部落格&lt;/a&gt;學習製作留言板，但發現 Vercel 在建立 storage 的選項上已沒有 postgress，&lt;a href=&#34;https://vercel.com/changelog/neon-now-available-on-vercel-marketplace&#34;&gt;原因&lt;/a&gt;，&lt;br /&gt;
+        <content type="html">&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;h2 id=&#34;製作動機&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#製作動機&#34;&gt;#&lt;/a&gt; 製作動機&lt;/h2&gt;
+&lt;p&gt;原先是看 &lt;a href=&#34;https://8loser.github.io/2024/06/16/shokaX-waline-comment/&#34;&gt;8樓部落格&lt;/a&gt;學習製作留言板，但發現 Vercel 在建立 storage 的選項上已沒有 postgress，&lt;a href=&#34;https://vercel.com/changelog/neon-now-available-on-vercel-marketplace&#34;&gt;原因&lt;/a&gt;，&lt;br&gt;
 因此決定使用 Supabase 建立&lt;/p&gt;
 &lt;h2 id=&#34;vercel-服務端部署&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vercel-服務端部署&#34;&gt;#&lt;/a&gt; Vercel 服務端部署&lt;/h2&gt;
-&lt;p&gt;主要按照&lt;a href=&#34;https://waline.js.org/guide/deploy/vercel.html&#34;&gt;Waline文檔&lt;/a&gt;的步驟做&lt;br /&gt;
+&lt;p&gt;主要按照&lt;a href=&#34;https://waline.js.org/guide/deploy/vercel.html&#34;&gt;Waline文檔&lt;/a&gt;的步驟做&lt;br&gt;
 按下 deploy -&amp;gt; 登入 github 帳號&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/after_github.png=300x300&#34; alt=&#34;登入github後&#34; /&gt;&lt;br /&gt;
-創立一個 waline repository 在自己的帳號下&lt;br /&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/after_github.png&#34; class=&#34;&#34; title=&#34;登入github後&#34;&gt;&lt;br&gt;
+創立一個 waline repository 在自己的帳號下&lt;br&gt;
 我取名為 waline-test，按下 create，等待部署&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/images/after_deploy.png=300x300&#34; alt=&#34;部署完&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/after_deploy.png&#34; class=&#34;&#34; title=&#34;部署完&#34;&gt;&lt;br&gt;
+部署完後會如上圖，按下 Continue to DashBoard&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/after_repository.png&#34; class=&#34;&#34; title=&#34;Repository&#34;&gt;&lt;br&gt;
+此外，在自己的 Github 上也會看到一個剛部署好的 private repository&lt;/p&gt;
 &lt;h2 id=&#34;創立-storage&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#創立-storage&#34;&gt;#&lt;/a&gt; 創立 Storage&lt;/h2&gt;
+&lt;p&gt;接著要創立 PostgreSQL 的資料庫，用來存放留言的相關資訊&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/vercel_storage.png&#34; class=&#34;&#34; title=&#34;Storage&#34;&gt;&lt;br&gt;
+按下 Storage&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/create_database.png&#34; class=&#34;&#34; title=&#34;create_database&#34;&gt;&lt;br&gt;
+按下 Create Database&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/vercel_supabase.png&#34; class=&#34;&#34; title=&#34;Vercel_Supabase&#34;&gt;&lt;br&gt;
+選擇 Supabase 並一直按下 Continue&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/supabase_name.png&#34; class=&#34;&#34; title=&#34;supabase_name&#34;&gt;&lt;br&gt;
+輸入 database 的名稱，按下 Create&lt;/p&gt;
 &lt;h2 id=&#34;supabase-設定&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#supabase-設定&#34;&gt;#&lt;/a&gt; Supabase 設定&lt;/h2&gt;
-&lt;p&gt;上述步驟完成後，會在自己的 Supabase 下看到製作好的 project&lt;/p&gt;
-</content>
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/supabase_project.png&#34; class=&#34;&#34; title=&#34;supabase_project&#34;&gt;&lt;br&gt;
+上述步驟完成後，會在自己的 Supabase 看到 supabase-vercel，點進去&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/SQL_Editor.png&#34; class=&#34;&#34; title=&#34;SQL_Editor&#34;&gt;&lt;br&gt;
+左側欄選擇 SQL Editor&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/PGSQL.png&#34; class=&#34;&#34; title=&#34;PGSQL&#34;&gt;&lt;br&gt;
+把&lt;a href=&#34;https://github.com/walinejs/waline/blob/main/assets/waline.pgsql&#34;&gt;PGSQL&lt;/a&gt;複製上並按下 Run&lt;br&gt;
+創立好後再 Table Editor 上會看到多了三張 Table&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/connect.png&#34; class=&#34;&#34; title=&#34;connect&#34;&gt;&lt;br&gt;
+接著在上方按下 Connect&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/seesion_pooler.png&#34; class=&#34;&#34; title=&#34;seesion_pooler&#34;&gt;&lt;br&gt;
+Method 調成 Session pooler&lt;br&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/ct_info.png&#34; class=&#34;&#34; title=&#34;ct_info&#34;&gt;&lt;br&gt;
+連接資訊要記住(host, port, database, user, pool_mode)&lt;/p&gt;
+&lt;h2 id=&#34;vercel-環境變數設定&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#vercel-環境變數設定&#34;&gt;#&lt;/a&gt; Vercel 環境變數設定&lt;/h2&gt;
+&lt;p&gt;接著要確定 Vercel 上的環境變數有符合&lt;a href=&#34;https://waline.js.org/guide/database.html#sqlite&#34;&gt;Waline環境變數規定&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Settings -&amp;gt; Enviroment Variables&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/Vercel_set.png&#34; class=&#34;&#34; title=&#34;Vercel_set&#34;&gt;&lt;br&gt;
+確保有 PG_HOST, PG_DB, PG_USER, PG_PASSWORD, PG_SSL, PG_PORT&lt;br&gt;
+PG_SSL(true)&lt;br&gt;
+PG_PORT(5432)&lt;/p&gt;
+&lt;h2 id=&#34;最後&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#最後&#34;&gt;#&lt;/a&gt; 最後&lt;/h2&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/vercel_visit.png&#34; class=&#34;&#34; title=&#34;vercel_visit&#34;&gt;&lt;br&gt;
+回到 OverView 並按下 Visit&lt;br&gt;
+&lt;img loading=&#34;lazy&#34; src=&#34;/2025/12/04/walineAndSupabase/final.png&#34; class=&#34;&#34; title=&#34;final&#34;&gt;&lt;br&gt;
+測試是否可以正常留言，就完成了&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</content>
         <category term="Waline" scheme="https://ruserxd.github.io/tags/Waline/" />
         <category term="Hexo" scheme="https://ruserxd.github.io/tags/Hexo/" />
         <category term="Supabase" scheme="https://ruserxd.github.io/tags/Supabase/" />
@@ -41,8 +77,8 @@
         <id>https://ruserxd.github.io/2025/12/02/recommendation/</id>
         <title>推甄心得文</title>
         <link rel="alternate" href="https://ruserxd.github.io/2025/12/02/recommendation/"/>
-        <content type="html">&lt;p&gt;原先為測試，日後補上&lt;/p&gt;
-</content>
+        <content type="html">&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;p&gt;原先為測試，日後補上&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</content>
         <category term="推甄" scheme="https://ruserxd.github.io/tags/%E6%8E%A8%E7%94%84/" />
         <updated>2025-12-01T16:00:00.000Z</updated>
     </entry>
